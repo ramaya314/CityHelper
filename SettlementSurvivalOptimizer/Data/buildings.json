@@ -1,0 +1,303 @@
+[
+  {
+    "name": "Tofu Workshop",
+    "maxWorkers": 4,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Tofu Production",
+        "inputs": {
+          "Soybean": 2.0
+        },
+        "outputs": {
+          "Tofu": 3.0
+        },
+        "productionRatePerWorkerPerYear": 150,
+        "productionTimeInDays": 2
+      }
+    ]
+  },
+  {
+    "name": "Feast Hall",
+    "maxWorkers": 6,
+    "partialStaffingEfficiency": 0.85,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Feast Production",
+        "inputs": {
+          "Meat": 3.0,
+          "Wheat": 2.0,
+          "Vegetable": 2.0
+        },
+        "outputs": {
+          "Feast": 2.0
+        },
+        "productionRatePerWorkerPerYear": 100,
+        "productionTimeInDays": 3
+      }
+    ]
+  },
+  {
+    "name": "Chocolate Workshop",
+    "maxWorkers": 4,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Chocolate Production",
+        "inputs": {
+          "Cocoa": 2.0,
+          "Sugar": 1.0,
+          "Milk": 1.0
+        },
+        "outputs": {
+          "Chocolate": 3.0
+        },
+        "productionRatePerWorkerPerYear": 120,
+        "productionTimeInDays": 2
+      }
+    ]
+  },
+  {
+    "name": "Tailor Shop",
+    "maxWorkers": 5,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Custom Gown Production",
+        "inputs": {
+          "Fabric": 4.0,
+          "Dye": 1.0
+        },
+        "outputs": {
+          "Custom Gown": 1.0
+        },
+        "productionRatePerWorkerPerYear": 80,
+        "productionTimeInDays": 4
+      }
+    ]
+  },
+  {
+    "name": "Tea House",
+    "maxWorkers": 3,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Black Tea Production",
+        "inputs": {
+          "Tea Leaves": 2.0
+        },
+        "outputs": {
+          "Black Tea": 3.0
+        },
+        "productionRatePerWorkerPerYear": 180,
+        "productionTimeInDays": 1
+      }
+    ]
+  },
+  {
+    "name": "Soap Workshop",
+    "maxWorkers": 4,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Soap Production",
+        "inputs": {
+          "Oil": 2.0,
+          "Lye": 1.0
+        },
+        "outputs": {
+          "Soap": 4.0
+        },
+        "productionRatePerWorkerPerYear": 160,
+        "productionTimeInDays": 2
+      }
+    ]
+  },
+  {
+    "name": "Popcorn Stand",
+    "maxWorkers": 2,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Popcorn Production",
+        "inputs": {
+          "Corn": 2.0,
+          "Oil": 0.5
+        },
+        "outputs": {
+          "Popcorn": 5.0
+        },
+        "productionRatePerWorkerPerYear": 200,
+        "productionTimeInDays": 1
+      }
+    ]
+  },
+  {
+    "name": "Distillery",
+    "maxWorkers": 5,
+    "partialStaffingEfficiency": 0.85,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Whiskey Production",
+        "inputs": {
+          "Wheat": 3.0,
+          "Water": 2.0
+        },
+        "outputs": {
+          "Whiskey": 2.0
+        },
+        "productionRatePerWorkerPerYear": 90,
+        "productionTimeInDays": 5
+      }
+    ]
+  },
+  {
+    "name": "Textile Mill",
+    "maxWorkers": 6,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Fabric Production",
+        "inputs": {
+          "Flax": 3.0
+        },
+        "outputs": {
+          "Fabric": 4.0
+        },
+        "productionRatePerWorkerPerYear": 140,
+        "productionTimeInDays": 2
+      }
+    ]
+  },
+  {
+    "name": "Sugar Mill",
+    "maxWorkers": 5,
+    "partialStaffingEfficiency": 0.9,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Sugar Production",
+        "inputs": {
+          "Sugar Cane": 4.0
+        },
+        "outputs": {
+          "Sugar": 3.0
+        },
+        "productionRatePerWorkerPerYear": 130,
+        "productionTimeInDays": 2
+      }
+    ]
+  },
+  {
+    "name": "Farm (Soybean)",
+    "maxWorkers": 8,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Soybean Farming",
+        "inputs": {},
+        "outputs": {
+          "Soybean": 10.0
+        },
+        "productionRatePerWorkerPerYear": 250,
+        "productionTimeInDays": 60
+      }
+    ]
+  },
+  {
+    "name": "Farm (Wheat)",
+    "maxWorkers": 8,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Wheat Farming",
+        "inputs": {},
+        "outputs": {
+          "Wheat": 12.0
+        },
+        "productionRatePerWorkerPerYear": 280,
+        "productionTimeInDays": 60
+      }
+    ]
+  },
+  {
+    "name": "Farm (Tomato)",
+    "maxWorkers": 6,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Tomato Farming",
+        "inputs": {},
+        "outputs": {
+          "Tomato": 8.0,
+          "Vegetable": 8.0
+        },
+        "productionRatePerWorkerPerYear": 220,
+        "productionTimeInDays": 45
+      }
+    ]
+  },
+  {
+    "name": "Farm (Sugar Cane)",
+    "maxWorkers": 8,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Sugar Cane Farming",
+        "inputs": {},
+        "outputs": {
+          "Sugar Cane": 10.0
+        },
+        "productionRatePerWorkerPerYear": 240,
+        "productionTimeInDays": 90
+      }
+    ]
+  },
+  {
+    "name": "Farm (Flax)",
+    "maxWorkers": 7,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Flax Farming",
+        "inputs": {},
+        "outputs": {
+          "Flax": 9.0
+        },
+        "productionRatePerWorkerPerYear": 230,
+        "productionTimeInDays": 55
+      }
+    ]
+  },
+  {
+    "name": "Farm (Corn)",
+    "maxWorkers": 8,
+    "partialStaffingEfficiency": 0.95,
+    "maintenanceCost": 0,
+    "recipes": [
+      {
+        "name": "Corn Farming",
+        "inputs": {},
+        "outputs": {
+          "Corn": 11.0
+        },
+        "productionRatePerWorkerPerYear": 270,
+        "productionTimeInDays": 65
+      }
+    ]
+  }
+]

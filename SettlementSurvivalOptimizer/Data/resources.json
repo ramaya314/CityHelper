@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Tofu",
+    "stock": 500,
+    "usedTotal": 5000,
+    "usedLastYear": 1200,
+    "producedTotal": 5200,
+    "producedLastYear": 1300,
+    "targetSurplus": 100,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Feast",
+    "stock": 200,
+    "usedTotal": 2000,
+    "usedLastYear": 500,
+    "producedTotal": 1900,
+    "producedLastYear": 480,
+    "targetSurplus": 50,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Chocolate",
+    "stock": 300,
+    "usedTotal": 3000,
+    "usedLastYear": 800,
+    "producedTotal": 3100,
+    "producedLastYear": 850,
+    "targetSurplus": 100,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Custom Gown",
+    "stock": 150,
+    "usedTotal": 1500,
+    "usedLastYear": 400,
+    "producedTotal": 1600,
+    "producedLastYear": 420,
+    "targetSurplus": 50,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Black Tea",
+    "stock": 600,
+    "usedTotal": 6000,
+    "usedLastYear": 1500,
+    "producedTotal": 6200,
+    "producedLastYear": 1550,
+    "targetSurplus": 200,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Soap",
+    "stock": 400,
+    "usedTotal": 4000,
+    "usedLastYear": 1000,
+    "producedTotal": 4100,
+    "producedLastYear": 1050,
+    "targetSurplus": 100,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Popcorn",
+    "stock": 800,
+    "usedTotal": 8000,
+    "usedLastYear": 2000,
+    "producedTotal": 8300,
+    "producedLastYear": 2100,
+    "targetSurplus": 300,
+    "isFinalProduct": true
+  },
+  {
+    "name": "Whiskey",
+    "stock": 250,
+    "usedTotal": 2500,
+    "usedLastYear": 600,
+    "producedTotal": 2450,
+    "producedLastYear": 590,
+    "targetSurplus": 50,
+    "isFinalProduct": true
+  }
+]

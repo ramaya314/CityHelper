@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch UI App",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-ui",
+            "program": "${workspaceFolder}/SettlementSurvivalOptimizer.UI/bin/Debug/net8.0/SettlementSurvivalOptimizer.UI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/SettlementSurvivalOptimizer.UI",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Launch UI App (No Build)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/SettlementSurvivalOptimizer.UI/bin/Debug/net8.0/SettlementSurvivalOptimizer.UI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/SettlementSurvivalOptimizer.UI",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Launch Console App",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-console",
+            "program": "${workspaceFolder}/SettlementSurvivalOptimizer/bin/Debug/net8.0/SettlementSurvivalOptimizer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/SettlementSurvivalOptimizer",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Attach to UI App",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ]
+}

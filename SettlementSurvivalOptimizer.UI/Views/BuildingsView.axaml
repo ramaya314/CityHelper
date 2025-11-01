@@ -1,0 +1,67 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SettlementSurvivalOptimizer.UI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+             x:Class="SettlementSurvivalOptimizer.UI.Views.BuildingsView"
+             x:DataType="vm:BuildingsViewModel">
+    
+    <Grid ColumnDefinitions="*,300">
+        <!-- Data Grid -->
+        <Border Grid.Column="0" BorderBrush="#3C3C3C" BorderThickness="1" Margin="0,0,10,0">
+            <ListBox ItemsSource="{Binding Buildings}" 
+                     SelectedItem="{Binding SelectedBuilding}"
+                     Background="#1E1E1E">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{Binding Name}" Foreground="White" Width="200" />
+                            <TextBlock Text="{Binding MaxWorkers, StringFormat='Max Workers: {0}'}" Foreground="Gray" Width="120" />
+                            <TextBlock Text="{Binding PartialStaffingEfficiency, StringFormat='Efficiency: {0:P0}'}" Foreground="Gray" Width="120" />
+                            <TextBlock Text="{Binding Recipes.Count, StringFormat='Recipes: {0}'}" Foreground="Gray" Width="100" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+
+        <!-- Edit Panel -->
+        <Border Grid.Column="1" BorderBrush="#3C3C3C" BorderThickness="1" Padding="15">
+            <StackPanel Spacing="15">
+                <TextBlock Text="Building Manager" FontSize="18" FontWeight="Bold" />
+
+                <StackPanel Spacing="10" IsVisible="{Binding !IsEditing}">
+                    <Button Content="Add New Building" Command="{Binding AddCommand}" HorizontalAlignment="Stretch" />
+                    <Button Content="Edit Selected" Command="{Binding EditCommand}" HorizontalAlignment="Stretch" />
+                    <Button Content="Delete Selected" Command="{Binding DeleteCommand}" HorizontalAlignment="Stretch" />
+                </StackPanel>
+
+                <StackPanel Spacing="10" IsVisible="{Binding IsEditing}">
+                    <TextBlock Text="Building Details:" FontWeight="Bold" />
+                    
+                    <TextBlock Text="Name:" />
+                    <TextBox Text="{Binding SelectedBuilding.Name}" />
+
+                    <TextBlock Text="Max Workers:" />
+                    <NumericUpDown Value="{Binding SelectedBuilding.MaxWorkers}" Minimum="1" Maximum="20" />
+
+                    <TextBlock Text="Partial Staffing Efficiency:" />
+                    <NumericUpDown Value="{Binding SelectedBuilding.PartialStaffingEfficiency}" 
+                                   Minimum="0" Maximum="1" Increment="0.05" FormatString="0.00" />
+
+                    <TextBlock Text="Maintenance Cost:" />
+                    <NumericUpDown Value="{Binding SelectedBuilding.MaintenanceCost}" Minimum="0" />
+
+                    <TextBlock Text="Note: Recipe editing available in database editor" 
+                               Foreground="Orange" TextWrapping="Wrap" FontSize="11" />
+
+                    <Separator />
+
+                    <Button Content="Save" Command="{Binding SaveCommand}" HorizontalAlignment="Stretch" />
+                    <Button Content="Cancel" Command="{Binding CancelCommand}" HorizontalAlignment="Stretch" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

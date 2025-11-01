@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SettlementSurvivalOptimizer.UI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+             x:Class="SettlementSurvivalOptimizer.UI.Views.OptimizeView"
+             x:DataType="vm:OptimizeViewModel">
+    
+    <Grid RowDefinitions="Auto,*">
+        <!-- Controls -->
+        <Border Grid.Row="0" BorderBrush="#3C3C3C" BorderThickness="1" Padding="15" Margin="0,0,0,10">
+            <StackPanel Spacing="15">
+                <TextBlock Text="Production Optimization" FontSize="20" FontWeight="Bold" />
+                
+                <Grid ColumnDefinitions="Auto,200,*,Auto">
+                    <TextBlock Grid.Column="0" Text="Population:" VerticalAlignment="Center" Margin="0,0,10,0" />
+                    <NumericUpDown Grid.Column="1" Value="{Binding Population}" 
+                                   Minimum="1" Maximum="10000" Increment="10" />
+                    
+                    <Button Grid.Column="3" Content="Run Optimization" 
+                            Command="{Binding OptimizeCommand}"
+                            IsEnabled="{Binding !IsOptimizing}"
+                            Padding="20,10"
+                            FontSize="14"
+                            FontWeight="Bold" />
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- Results -->
+        <Border Grid.Row="1" BorderBrush="#3C3C3C" BorderThickness="1" Padding="15">
+            <ScrollViewer>
+                <TextBlock Text="{Binding ResultsText}" 
+                           FontFamily="Consolas, Courier New, monospace" 
+                           FontSize="12"
+                           TextWrapping="NoWrap" />
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>

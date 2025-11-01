@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SettlementSurvivalOptimizer.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        x:Class="SettlementSurvivalOptimizer.UI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Settlement Survival - Production Optimizer"
+        Width="1200" Height="800">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Navigation Bar -->
+        <Border Grid.Row="0" Background="#2C2C2C" Padding="10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Resources" Command="{Binding ShowResourcesCommand}" 
+                        Classes="nav" Width="120" />
+                <Button Content="Buildings" Command="{Binding ShowBuildingsCommand}" 
+                        Classes="nav" Width="120" />
+                <Button Content="Optimize" Command="{Binding ShowOptimizeCommand}" 
+                        Classes="nav" Width="120" />
+            </StackPanel>
+        </Border>
+
+        <!-- Content Area -->
+        <Border Grid.Row="1" Background="#1E1E1E" Padding="20">
+            <ContentControl Content="{Binding CurrentPage}" />
+        </Border>
+
+        <!-- Status Bar -->
+        <Border Grid.Row="2" Background="#007ACC" Padding="8">
+            <TextBlock Text="{Binding StatusMessage}" 
+                       Foreground="White" 
+                       FontSize="12"/>
+        </Border>
+    </Grid>
+</Window>

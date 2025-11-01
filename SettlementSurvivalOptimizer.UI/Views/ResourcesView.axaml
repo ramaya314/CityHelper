@@ -1,0 +1,103 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SettlementSurvivalOptimizer.UI.ViewModels"
+             xmlns:models="using:SettlementSurvivalOptimizer.UI.Models"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+             x:Class="SettlementSurvivalOptimizer.UI.Views.ResourcesView"
+             x:DataType="vm:ResourcesViewModel">
+    
+    <Grid ColumnDefinitions="*,300" RowDefinitions="Auto,*">
+        <!-- Header with count -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Resources.Count, StringFormat='Resources: {0}'}" 
+                   Margin="5" FontWeight="Bold" />
+        
+        <!-- Data Grid -->
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="#3C3C3C" BorderThickness="1" Margin="0,0,10,0">
+            <StackPanel>
+                <!-- Temporary ListBox to debug -->
+                <ListBox ItemsSource="{Binding Resources}" 
+                         SelectedItem="{Binding SelectedResource}"
+                         Height="200" 
+                         Background="#1E1E1E">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{Binding Name}" Foreground="White" Width="100" />
+                                <TextBlock Text="{Binding Stock, StringFormat='Stock: {0}'}" Foreground="Gray" Width="100" />
+                                <TextBlock Text="{Binding UsedLastYear, StringFormat='Used: {0}'}" Foreground="Gray" Width="100" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                
+                <!-- Original DataGrid (hidden for now) -->
+                <!--
+                <DataGrid ItemsSource="{Binding Resources}"
+                          SelectedItem="{Binding SelectedResource}"
+                          IsReadOnly="True"
+                          CanUserResizeColumns="True"
+                          CanUserSortColumns="True"
+                          GridLinesVisibility="All"
+                          BorderThickness="0"
+                          MinHeight="200"
+                          RowHeight="35"
+                          AutoGenerateColumns="False"
+                          HeadersVisibility="Column"
+                          Background="#1E1E1E"
+                          Foreground="White"
+                          RowBackground="#2D2D30">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Width="150" />
+                        <DataGridTextColumn Header="Stock" Binding="{Binding Stock, Mode=OneWay}" Width="100" />
+                        <DataGridTextColumn Header="Used/Year" Binding="{Binding UsedLastYear, Mode=OneWay}" Width="100" />
+                        <DataGridTextColumn Header="Produced/Year" Binding="{Binding ProducedLastYear, Mode=OneWay}" Width="120" />
+                        <DataGridTextColumn Header="Target Surplus" Binding="{Binding TargetSurplus, Mode=OneWay}" Width="120" />
+                        <DataGridCheckBoxColumn Header="Final Product" Binding="{Binding IsFinalProduct, Mode=OneWay}" Width="120" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                -->
+            </StackPanel>
+        </Border>
+
+        <!-- Edit Panel -->
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="#3C3C3C" BorderThickness="1" Padding="15">
+            <StackPanel Spacing="15">
+                <TextBlock Text="Resource Manager" FontSize="18" FontWeight="Bold" />
+
+                <StackPanel Spacing="10" IsVisible="{Binding !IsEditing}">
+                    <Button Content="Add New Resource" Command="{Binding AddCommand}" HorizontalAlignment="Stretch" />
+                    <Button Content="Edit Selected" Command="{Binding EditCommand}" HorizontalAlignment="Stretch" />
+                    <Button Content="Delete Selected" Command="{Binding DeleteCommand}" HorizontalAlignment="Stretch" />
+                </StackPanel>
+
+                <StackPanel Spacing="10" IsVisible="{Binding IsEditing}">
+                    <TextBlock Text="Resource Details:" FontWeight="Bold" />
+                    
+                    <TextBlock Text="Name:" />
+                    <TextBox Text="{Binding SelectedResource.Name}" />
+
+                    <TextBlock Text="Current Stock:" />
+                    <NumericUpDown Value="{Binding SelectedResource.Stock}" Minimum="0" />
+
+                    <TextBlock Text="Used (Last Year):" />
+                    <NumericUpDown Value="{Binding SelectedResource.UsedLastYear}" Minimum="0" />
+
+                    <TextBlock Text="Produced (Last Year):" />
+                    <NumericUpDown Value="{Binding SelectedResource.ProducedLastYear}" Minimum="0" />
+
+                    <TextBlock Text="Target Surplus:" />
+                    <NumericUpDown Value="{Binding SelectedResource.TargetSurplus}" />
+
+                    <CheckBox Content="Is Final Product?" IsChecked="{Binding SelectedResource.IsFinalProduct}" />
+
+                    <Separator />
+
+                    <Button Content="Save" Command="{Binding SaveCommand}" HorizontalAlignment="Stretch" />
+                    <Button Content="Cancel" Command="{Binding CancelCommand}" HorizontalAlignment="Stretch" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
